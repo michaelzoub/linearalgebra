@@ -2,8 +2,12 @@
 import { useState } from "react";
 import { Text } from "@maximeheckel/design-system";
 import ChangeOfBasis from "@/components/ChangeOfBasis";
+import Eigenvalues from "@/components/Eigenvalues";
 
-const TABS = [{ id: "change-of-basis", label: "Change of Basis" }];
+const TABS = [
+  { id: "change-of-basis", label: "Change of Basis" },
+  { id: "eigenvalues", label: "Eigenvalues" },
+];
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("change-of-basis");
@@ -55,6 +59,7 @@ export default function Home() {
       {/* Content */}
       <main style={{ flex: 1, padding: 24 }}>
         {activeTab === "change-of-basis" && <ChangeOfBasis />}
+        {activeTab === "eigenvalues" && <Eigenvalues />}
       </main>
     </div>
   );
